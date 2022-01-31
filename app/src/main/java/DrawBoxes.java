@@ -9,17 +9,17 @@ import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.graphics.Canvas;
 
-public class DrawBoard extends SurfaceView {
+public class DrawBoxes extends SurfaceView {
 
-    private Bitmap boardImage;
-    private Bitmap biggerBoardImage;
+    private Bitmap boxImage;
+    private Bitmap smallerBoxImage;
 
-    public DrawBoard(Context context) {
+    public DrawBoxes(Context context) {
         super(context);
         initialize();
     }
 
-    public DrawBoard(Context context, AttributeSet attrib) {
+    public DrawBoxes(Context context, AttributeSet attrib) {
         super(context, attrib);
         initialize();
     }
@@ -29,12 +29,12 @@ public class DrawBoard extends SurfaceView {
 
         this.setBackgroundColor(Color.WHITE);
 
-        boardImage = BitmapFactory.decodeResource(getResources(), R.drawable.blokusgrid);
-        biggerBoardImage = Bitmap.createScaledBitmap(boardImage, 700, 700, false);
+        boxImage = BitmapFactory.decodeResource(getResources(), R.drawable.blokussquare);
+        smallerBoxImage = Bitmap.createScaledBitmap(boxImage, 500, 400, false);
     }
 
     @Override
     public void onDraw(Canvas c) {
-        c.drawBitmap(biggerBoardImage, 650.0f, 50.0f, new Paint());
+        c.drawBitmap(smallerBoxImage, 25.0f, 50.0f, new Paint());
     }
 }

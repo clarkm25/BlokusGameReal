@@ -35,6 +35,6 @@ public class DrawBoard extends SurfaceView {
 
     @Override
     public void onDraw(Canvas c) {
-        c.drawBitmap(biggerBoardImage, 650.0f, 50.0f, new Paint());
+        c.drawBitmap(biggerBoardImage, -10.0f, 50.0f, new Paint());
     }
 }

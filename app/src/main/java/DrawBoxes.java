@@ -35,6 +35,6 @@ public class DrawBoxes extends SurfaceView {
 
     @Override
     public void onDraw(Canvas c) {
-        c.drawBitmap(smallerBoxImage, 25.0f, 50.0f, new Paint());
+        c.drawBitmap(smallerBoxImage, 75.0f, 50.0f, new Paint());
     }
 }

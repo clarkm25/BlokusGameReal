@@ -106,5 +106,36 @@ public class DrawBoard extends SurfaceView {
         piecePath.lineTo(266, 279);
         piecePath.lineTo(266, 152);
         c.drawPath(piecePath, red);
+
+        Paint green = new Paint();
+        green.setColor(Color.GREEN);
+        green.setStyle(Paint.Style.FILL);
+
+        //Green - 5 block piece
+        c.drawRect(618, 58, 648, 215, green);
+
+        //Green - 4 block piece
+        c.drawRect(586, 217, 616, 342, green);
+
+        //Green - 4 block piece
+        piecePath.reset();
+        piecePath.moveTo(584, 344);
+        piecePath.lineTo(490, 344);
+        piecePath.lineTo(490, 374);
+        piecePath.lineTo(554, 374);
+        piecePath.lineTo(554, 404);
+        piecePath.lineTo(584, 404);
+        piecePath.lineTo(584, 344);
+        c.drawPath(piecePath, green);
+
+        Paint blue = new Paint();
+        blue.setColor(Color.BLUE);
+        blue.setStyle(Paint.Style.FILL);
+
+        //Blue - 4 block pieces
+        c.drawRect(10, 565, 42, 692, blue);
+
+        //Blue - 5 block pieces
+        c.drawRect(43, 535, 205, 564, blue);
     }
 }

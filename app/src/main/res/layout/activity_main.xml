@@ -23,10 +23,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <com.example.blokusgamereal.DrawBoxes
+                <com.example.blokusgamereal.PlayerOneBox
                     android:id="@+id/topLeftBox"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoxes>
+                    android:layout_height="wrap_content"></com.example.blokusgamereal.PlayerOneBox>
             </LinearLayout>
 
             <LinearLayout
@@ -34,10 +34,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <com.example.blokusgamereal.DrawBoxes
+                <com.example.blokusgamereal.PlayerTwoBox
                     android:id="@+id/botLeftBox"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoxes>
+                    android:layout_height="wrap_content"></com.example.blokusgamereal.PlayerTwoBox>
             </LinearLayout>
 
         </LinearLayout>
@@ -89,10 +89,10 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <com.example.blokusgamereal.DrawBoxes
+                <com.example.blokusgamereal.PlayerThreeBox
                     android:id="@+id/topRightBox"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoxes>
+                    android:layout_height="wrap_content"></com.example.blokusgamereal.PlayerThreeBox>
             </LinearLayout>
 
             <LinearLayout
@@ -101,10 +101,10 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <com.example.blokusgamereal.DrawBoxes
+                <com.example.blokusgamereal.PlayerFourBox
                     android:id="@+id/botRightBox"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoxes>
+                    android:layout_height="wrap_content"></com.example.blokusgamereal.PlayerFourBox>
             </LinearLayout>
         </LinearLayout>
 

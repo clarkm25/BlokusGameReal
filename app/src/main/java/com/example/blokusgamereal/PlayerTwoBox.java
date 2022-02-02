@@ -9,17 +9,17 @@ import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.graphics.Canvas;
 
-public class DrawBoxes extends SurfaceView {
+public class PlayerTwoBox extends SurfaceView {
 
     private Bitmap boxImage;
     private Bitmap smallerBoxImage;
 
-    public DrawBoxes(Context context) {
+    public PlayerTwoBox(Context context) {
         super(context);
         initialize();
     }
 
-    public DrawBoxes(Context context, AttributeSet attrib) {
+    public PlayerTwoBox(Context context, AttributeSet attrib) {
         super(context, attrib);
         initialize();
     }

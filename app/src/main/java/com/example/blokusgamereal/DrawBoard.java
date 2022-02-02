@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.graphics.Canvas;
@@ -30,11 +31,13 @@ public class DrawBoard extends SurfaceView {
         this.setBackgroundColor(Color.WHITE);
 
         boardImage = BitmapFactory.decodeResource(getResources(), R.drawable.blokusgrid);
-        biggerBoardImage = Bitmap.createScaledBitmap(boardImage, 700, 700, false);
+        biggerBoardImage = Bitmap.createScaledBitmap(boardImage, 650, 650, false);
     }
 
     @Override
     public void onDraw(Canvas c) {
-        c.drawBitmap(biggerBoardImage, -10.0f, 50.0f, new Paint());
+        c.drawBitmap(biggerBoardImage, 2.0f, 50.0f, new Paint());
+
+
     }
 }

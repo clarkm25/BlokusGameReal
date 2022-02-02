@@ -5,11 +5,12 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/boxesAndBoard"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -23,6 +24,7 @@
                 android:layout_weight="1">
 
                 <com.example.blokusgamereal.DrawBoxes
+                    android:id="@+id/topLeftBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoxes>
             </LinearLayout>
@@ -33,6 +35,7 @@
                 android:layout_weight="1">
 
                 <com.example.blokusgamereal.DrawBoxes
+                    android:id="@+id/botLeftBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoxes>
             </LinearLayout>
@@ -49,12 +52,32 @@
             android:paddingEnd="-10dp">
 
             <com.example.blokusgamereal.DrawBoard
+                android:id="@+id/board"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoard>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/playerTurn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center"
+                    android:text="Player 1 Turn"
+                    android:textColor="#FF000000"
+                    android:textSize="24dp" />
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/rightBoxes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -67,6 +90,7 @@
                 android:orientation="horizontal">
 
                 <com.example.blokusgamereal.DrawBoxes
+                    android:id="@+id/topRightBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoxes>
             </LinearLayout>
@@ -78,6 +102,7 @@
                 android:orientation="horizontal">
 
                 <com.example.blokusgamereal.DrawBoxes
+                    android:id="@+id/botRightBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"></com.example.blokusgamereal.DrawBoxes>
             </LinearLayout>
@@ -86,6 +111,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/botButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -97,7 +123,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:layout_weight="2"
-            android:text="Help"/>
+            android:text="Help" />
 
         <Button
             android:id="@+id/rotateButton"

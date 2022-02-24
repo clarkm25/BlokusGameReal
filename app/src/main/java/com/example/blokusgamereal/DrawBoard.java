@@ -27,6 +27,7 @@ public class DrawBoard extends SurfaceView {
     Paint red = new Paint();
     Paint green = new Paint();
     Paint blue = new Paint();
+    Paint textPaint = new Paint();
 
     public DrawBoard(Context context) {
         super(context);
@@ -57,6 +58,9 @@ public class DrawBoard extends SurfaceView {
         green.setStyle(Paint.Style.FILL);
         blue.setColor(Color.BLUE);
         blue.setStyle(Paint.Style.FILL);
+        textPaint.setColor(Color.BLACK);
+        textPaint.setStyle(Paint.Style.FILL);
+        textPaint.setTextSize(48.0f);
 
         //Draws the grid used for game
         for(int i = 0; i < ROWS_AND_COLS; i++) {
@@ -897,5 +901,16 @@ public class DrawBoard extends SurfaceView {
         piecePath.lineTo(140 + RIGHT_BOXES,380 + BOTTOM_BOXES);
         piecePath.lineTo(140 + RIGHT_BOXES,350 + BOTTOM_BOXES);
         c.drawPath(piecePath, yellow);
+
+        this.drawPlayerInfo(c, 10, "Blue");
+    }
+
+    public void drawPlayerInfo(Canvas canvas, int initPlayerPoints, String initPlayerTurn) {
+        String playerTurn = initPlayerTurn;
+        int playerPoints = initPlayerPoints;
+
+        canvas.drawText("Player Turn: " + playerTurn, 800.0f, 700.0f, textPaint);
+        canvas.drawText(playerTurn + "'s points: " + playerPoints, 800.0f, 750.0f, textPaint);
+
     }
 }

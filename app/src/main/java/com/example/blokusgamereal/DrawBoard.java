@@ -536,7 +536,6 @@ public class DrawBoard extends SurfaceView {
         piecePath.lineTo(140 + LEFT_BOXES,350 + BOTTOM_BOXES);
         c.drawPath(piecePath, blue);
 
-
         /**
          * PLAYER THREE BOX -- GREEN
          */

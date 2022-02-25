@@ -1,5 +1,8 @@
 package com.example.blokusgamereal;
 
+import android.graphics.Matrix;
+import android.graphics.Path;
+
 /**
  * Game State for the Blokus game. Provides information about the game as well as a constructor
  * and deep copy constructor for all of the information being supplied and initialized.
@@ -85,6 +88,8 @@ public class BlokusGameState {
 
     /**
      *  Deep copy ctor
+     *
+     * @param toCopy
      */
     public BlokusGameState(BlokusGameState toCopy) {
 
@@ -140,6 +145,8 @@ public class BlokusGameState {
     /**
      *  This will change the gameOn boolean to take steps to quit
      *  the game
+     *
+     * @param initGameOn
      */
     public boolean quitGame(boolean initGameOn) {
         this.gameOn = initGameOn;
@@ -155,6 +162,11 @@ public class BlokusGameState {
      *  This will check to see if a legal move is at the current touch position
      *  and then will increment the appropriate players score based on the
      *  piece placed
+     *
+     * @param playerNum
+     * @param xPos
+     * @param yPos
+     * @param pieceNum
      */
     public boolean placePiece(int playerNum, int xPos, int yPos, int pieceNum) {
         if (this.legalMoveArray[playerNum][xPos][yPos]==0) {
@@ -166,14 +178,34 @@ public class BlokusGameState {
         }
     }
 
-    public boolean rotatePiece(int player) {
+    /**
+     * This will rotate a player's given piece 90 degrees counterclockwise given that it is the
+     * player's turn.
+     *
+     * @param player
+     * @param piece
+     * @param midX
+     * @param midY
+     */
+    public boolean rotatePiece(int player, Path piece, int midX, int midY) {
+        //Switches to true if it is given players turn
+        boolean legal = false;
+        //Matrix that will rotate pieces 90 degrees
+        Matrix midPoint = new Matrix();
+        midPoint.setRotate(90.0f, midX, midY);
 
+        for (int i = 0; i < playerTurn.length; i++) {
+            if (playerTurn[i] == player) {
+                piece.transform(midPoint);
+                legal = true;
 
-        return false;
+            }
+        }
+        return legal;
     }
 
     /**
-     *  This will return a string version of the entire BlokusGameState
+     * This will return a string version of the entire BlokusGameState
      */
     @Override
     public String toString() {

@@ -124,4 +124,10 @@ public class BlokusGameState {
         }
     }
 
+    @Override
+    public String toString()
+    {
+
+        return null;
+    }
 }

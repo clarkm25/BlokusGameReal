@@ -1,12 +1,18 @@
 package com.example.blokusgamereal;
 
+/**
+ * Game State for the Blokus game. Provides information about the game as well as a constructor
+ * and deep copy constructor for all of the information being supplied and initialized.
+ *
+ * @author Max Clark, Skyelar Cann, Gavin Raguindin
+ * @version February 24th 2022
+ */
 public class BlokusGameState {
 
     private int[] playerTurn;
     private int[] playerScore;
     private BlokusBlock [][] blockArray;
     private int [][][] legalMoveArray;
-    private boolean legalMove;
     private boolean gameOn;
 
     private static final int RED = 1;
@@ -136,13 +142,19 @@ public class BlokusGameState {
         }
     }
 
-    public boolean placePiece() {
-        if (legalMove == true) {
+    public boolean placePiece(int initX, int initY) {
+        if (true == true) {
             return true;
         }
         else {
             return false;
         }
+    }
+
+    public boolean rotatePiece(int player) {
+
+
+        return false;
     }
 
     @Override
@@ -151,8 +163,6 @@ public class BlokusGameState {
 
         gameStateInfo = "" + gameOn + "%n";
 
-        gameStateInfo += "" + legalMove + "%n";
-
         for (int i = 0; i < playerScore.length; i++) {
             gameStateInfo += "Player " + playerScore[i] + "%n";
         }
@@ -160,6 +170,7 @@ public class BlokusGameState {
         for (int i = 0; i < playerTurn.length; i++) {
             gameStateInfo += "Player " + playerTurn[i] + "'s turn. %n";
         }
+
 
         return gameStateInfo;
     }

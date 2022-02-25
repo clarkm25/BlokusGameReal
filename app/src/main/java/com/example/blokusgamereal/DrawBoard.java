@@ -8,19 +8,26 @@ import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.graphics.Canvas;
 
+/**
+ * Class that draws all of the Blokus information required for the game on a surface view. Shows
+ * pieces, player boxes, grid, and score/ player turn.
+ *
+ * @author Max Clark, Skyelar Cann, Gavin Raguindin
+ * @version February 24th 2022
+ */
 public class DrawBoard extends SurfaceView {
 
     //Instance variables
-    private int ROWS_AND_COLS = 20;
-    private int GRIDBOX_SIZE = 30;
-    private int BOARD_START_HEIGHT = 50;
-    private int BOARD_START_WIDTH = 700;
-    private int LEFT_BOXES = 50;
-    private int RIGHT_BOXES = 1350;
-    private int TOP_BOXES = 10;
-    private int BOTTOM_BOXES = 465;
-    private int PBOX_HEIGHT = 450;
-    private int PBOX_WIDTH = 600;
+    private static final int ROWS_AND_COLS = 20;
+    private static final int GRIDBOX_SIZE = 30;
+    private static final int BOARD_START_HEIGHT = 50;
+    private static final int BOARD_START_WIDTH = 700;
+    private static final int LEFT_BOXES = 50;
+    private static final int RIGHT_BOXES = 1350;
+    private static final int TOP_BOXES = 10;
+    private static final int BOTTOM_BOXES = 465;
+    private static final int PBOX_HEIGHT = 450;
+    private static final int PBOX_WIDTH = 600;
 
     Paint gridPaint = new Paint();
     Paint yellow = new Paint();

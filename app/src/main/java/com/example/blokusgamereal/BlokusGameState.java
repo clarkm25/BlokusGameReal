@@ -6,6 +6,8 @@ public class BlokusGameState {
     private int[] playerScore;
     private BlokusBlock [][] blockArray;
     private int [][][] legalMoveArray;
+    private boolean legalMove;
+    private boolean gameOn;
 
     private static final int RED = 1;
     private static final int BLUE = 2;
@@ -124,10 +126,42 @@ public class BlokusGameState {
         }
     }
 
-    @Override
-    public String toString()
-    {
-
-        return null;
+    public boolean quitGame(boolean initGameOn) {
+        gameOn = initGameOn;
+        if (gameOn = false) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
+
+    public boolean placePiece() {
+        if (legalMove == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        String gameStateInfo;
+
+        gameStateInfo = "" + gameOn + "%n";
+
+        gameStateInfo += "" + legalMove + "%n";
+
+        for (int i = 0; i < playerScore.length; i++) {
+            gameStateInfo += "Player " + playerScore[i] + "%n";
+        }
+
+        for (int i = 0; i < playerTurn.length; i++) {
+            gameStateInfo += "Player " + playerTurn[i] + "'s turn. %n";
+        }
+
+        return gameStateInfo;
+    }
+
 }

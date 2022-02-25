@@ -147,6 +147,8 @@ public class BlokusGameState {
      *  the game
      *
      * @param initGameOn
+     *
+     * @return boolean
      */
     public boolean quitGame(boolean initGameOn) {
         this.gameOn = initGameOn;
@@ -159,6 +161,16 @@ public class BlokusGameState {
     }
 
     /**
+     *  This method will be responsible for handling the display of the help menu once the
+     *  game has access to the game framework and will return false for now
+     *
+     * @return boolean
+     */
+    public boolean helpMenu()
+    {
+        return false;
+    }
+    /**
      *  This will check to see if a legal move is at the current touch position
      *  and then will increment the appropriate players score based on the
      *  piece placed
@@ -167,6 +179,8 @@ public class BlokusGameState {
      * @param xPos
      * @param yPos
      * @param pieceNum
+     *
+     * @return boolean
      */
     public boolean placePiece(int playerNum, int xPos, int yPos, int pieceNum) {
         if (this.legalMoveArray[playerNum][xPos][yPos]==0) {
@@ -186,6 +200,8 @@ public class BlokusGameState {
      * @param piece
      * @param midX
      * @param midY
+     *
+     * @return boolean
      */
     public boolean rotatePiece(int player, Path piece, int midX, int midY) {
         //Switches to true if it is given players turn

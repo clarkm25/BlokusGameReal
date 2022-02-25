@@ -3,15 +3,15 @@ package com.example.blokusgamereal;
 public class BlokusBlock {
     private int color;
     private int blockScore;
-    /* No param ctor */
+
+    /** No param ctor */
     public BlokusBlock()
     {
         this.color = -1;
         this.blockScore = 5;
     }
 
-
-    /* Getters of BlokusBlock variables */
+    /** Getters of BlokusBlock variables */
     public int getColor()
     {
         return this.color;
@@ -22,7 +22,7 @@ public class BlokusBlock {
         return this.blockScore;
     }
 
-    /* Setters of BlokusBlock variables */
+    /** Setters of BlokusBlock variables */
     public void setColor(int toSet)
     {
         this.color = toSet;
@@ -31,5 +31,14 @@ public class BlokusBlock {
     public void setBlockScore(int toSet)
     {
         this.blockScore = toSet;
+    }
+
+    /**
+     *  Returns a string version of the BlokusBlock
+     */
+    @Override
+    public String toString()
+    {
+        return "Color: " + this.color + " Score: " + this.blockScore;
     }
 }

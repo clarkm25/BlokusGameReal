@@ -2,36 +2,38 @@ package com.example.blokusgamereal;
 
 public class BlokusGameState {
 
+    /** Declaration of instance variables*/
     private int[] playerTurn;
     private int[] playerScore;
-    private BlokusBlock [][] blockArray;
-    private int [][][] legalMoveArray;
-    private boolean legalMove;
+    private BlokusBlock [][] blockArray; //Represents each players collection of pieces
+    private int [][][] legalMoveArray; //Represent each player's legal moves on the board
     private boolean gameOn;
 
+    /** Declaration of final ints to represent red through yellow*/
     private static final int RED = 1;
     private static final int BLUE = 2;
     private static final int GREEN = 3;
     private static final int YELLOW = 4;
 
-    /*Default Constructor */
+    /** Default ctor */
     public BlokusGameState() {
 
-        /* Array containing the expected ids for checking player turn */
+        /** Array containing the expected ids for checking player turn */
         this.playerTurn = new int[] {1,2,3,4};
 
-        /* Array for holding player scores */
+        /** Array for holding player scores */
         this.playerScore = new int[] {0,0,0,0};
 
-        /*
-         * Array containing the block objects within each player box
-         * and each player's box will be populated with the appropriate blocks
+        /**
+         *  Array containing the block objects within each player box
+         *  and each player's box will be populated with the appropriate blocks
          */
         blockArray = new BlokusBlock[4][21];
         for(int i = 0; i<4; i++)
         {
             for (int j = 0; j<21; j++)
             {
+                /** Switch statement to set the appropriate block colors */
                 switch (i)
                 {
                     case 0:
@@ -57,29 +59,31 @@ public class BlokusGameState {
             }
         }
 
-        /*
+        /**
          *  Array representing the board and the legal moves within it
          *  and all values are initially set to 0
          */
         this.legalMoveArray = new int[4][20][20];
-        for(int k = 0; k<4; k++)
+        for(int i = 0; i<4; i++)
         {
-            for(int i = 0; i<20; i++)
+            for(int j = 0; j<20; j++)
             {
-                for (int j = 0; j<20; j++)
+                for (int k = 0; k<20; k++)
                 {
-                    this.legalMoveArray[k][i][j] = 0;
+                    this.legalMoveArray[i][j][k] = 0;
                 }
             }
         }
     }
 
-    /* Deep copy ctor */
+    /**
+     *  Deep copy ctor
+     */
     public BlokusGameState(BlokusGameState toCopy) {
 
-        /*
-         * Copy process for the player turn array
-         * Starts by initializing a new array then copies contents over
+        /**
+         *  Copy process for the player turn array
+         *  Starts by initializing a new array then copies contents over
          */
         this.playerTurn = new int[4];
         for(int i = 0; i<4; i++)
@@ -87,9 +91,9 @@ public class BlokusGameState {
             this.playerTurn[i] = toCopy.playerTurn[i];
         }
 
-        /*
-         * Copy process for the player scores
-         * Starts by initializing a new array then copies contents over
+        /**
+         *  Copy process for the player scores
+         *  Starts by initializing a new array then copies contents over
          */
         this.playerScore = new int[4];
         for (int i = 0; i<4; i++)
@@ -97,9 +101,9 @@ public class BlokusGameState {
             this.playerScore[i] = toCopy.playerScore[i];
         }
 
-        /*
-         * Copy process for the array of blocks
-         * Starts by initializing a new array then copies contents over
+        /**
+         *  Copy process for the array of blocks
+         *  Starts by initializing a new array then copies contents over
          */
         this.blockArray = new BlokusBlock[4][21];
         for (int i = 0; i<4; i++)
@@ -110,24 +114,28 @@ public class BlokusGameState {
             }
         }
 
-        /*
-         * Copy process for the array of arrays of legal moves
-         * Starts by initializing a new array then copies contents over
+        /**
+         *  Copy process for the array of arrays of legal moves
+         *  Starts by initializing a new array then copies contents over
          */
-        for(int k = 0; k<4; k++)
+        for(int i = 0; i<4; i++)
         {
-            for(int i = 0; i<20; i++)
+            for(int j = 0; j<20; j++)
             {
-                for (int j = 0; j<20; j++)
+                for (int k = 0; k<20; k++)
                 {
-                    this.legalMoveArray[k][i][j] = toCopy.legalMoveArray[k][i][j];
+                    this.legalMoveArray[i][j][k] = toCopy.legalMoveArray[i][j][k];
                 }
             }
         }
     }
 
+    /**
+     *  This will change the gameOn boolean to take steps to quit
+     *  the game
+     */
     public boolean quitGame(boolean initGameOn) {
-        gameOn = initGameOn;
+        this.gameOn = initGameOn;
         if (gameOn = false) {
             return true;
         }
@@ -136,32 +144,61 @@ public class BlokusGameState {
         }
     }
 
-    public boolean placePiece() {
-        if (legalMove == true) {
+    /**
+     *  This will check to see if a legal move is at the current touch position
+     *  and then will increment the appropriate players score based on the
+     *  piece placed
+     */
+    public boolean placePiece(int playerNum, int xPos, int yPos, int pieceNum) {
+        if (this.legalMoveArray[playerNum][xPos][yPos]==0) {
+            this.playerScore[playerNum] += this.blockArray[playerNum][pieceNum].getBlockScore();
             return true;
         }
         else {
             return false;
         }
     }
-
+    /**
+     *  This will return a string version of the entire BlokusGameState
+     */
     @Override
     public String toString() {
         String gameStateInfo;
 
-        gameStateInfo = "" + gameOn + "%n";
+        gameStateInfo = "Game status is: " + gameOn + "\n";
 
-        gameStateInfo += "" + legalMove + "%n";
-
+        /** Concatenates gameStateInfo with the scores of all the players */
         for (int i = 0; i < playerScore.length; i++) {
-            gameStateInfo += "Player " + playerScore[i] + "%n";
+            gameStateInfo += "Player " + (i+1) + " score: " + playerScore[i] + "\n";
         }
 
+        /** Concatenates gameStateInfo with the turn strings of all the players */
         for (int i = 0; i < playerTurn.length; i++) {
-            gameStateInfo += "Player " + playerTurn[i] + "'s turn. %n";
+            gameStateInfo += "Player " + playerTurn[i] + "'s turn. \n";
         }
 
+        /** Concatenates gameStateInfo with the string versions of each block */
+        for(int i = 0; i<4; i++)
+        {
+            for(int j = 0; j<21; j++)
+            {
+                gameStateInfo += this.blockArray[i][j].toString() + "\n";
+            }
+        }
+
+        /** Concatenates gameStateInfo with array of legal moves on the board */
+        for(int i = 0; i<4; i++)
+        {
+            gameStateInfo += "Player " + (i+1) + " legalMoveArray: \n";
+            for(int j = 0; j<20; j++)
+            {
+                for(int k = 0; k<20; k++)
+                {
+                 gameStateInfo += this.legalMoveArray[i][j][k] + " ";
+                }
+                gameStateInfo += "\n";
+            }
+        }
         return gameStateInfo;
     }
-
 }

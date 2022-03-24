@@ -1,4 +1,4 @@
-package com.example.blokusgamereal;
+package com.example.blokusgamereal.Blokus.BlokusViews;
 
 import android.content.Context;
 import android.graphics.Color;

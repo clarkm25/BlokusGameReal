@@ -1,4 +1,4 @@
-package com.example.blokusgamereal;
+package com.example.blokusgamereal.Blokus.BlokusInfo;
 
 import android.graphics.Matrix;
 import android.graphics.Path;
@@ -20,7 +20,7 @@ public class BlokusGameState {
     /** Declaration of instance variables*/
     private int[] playerTurn;
     private int[] playerScore;
-    private BlokusBlock [][] blockArray; //Represents each players collection of pieces
+    private BlokusBlock[][] blockArray; //Represents each players collection of pieces
     private tileState[][] board;
     private boolean gameOn;
 

@@ -1,4 +1,4 @@
-package com.example.blokusgamereal;
+package com.example.blokusgamereal.Blokus.BlokusInfo;
 
 /**
  * Class for each of the Blokus block pieces.

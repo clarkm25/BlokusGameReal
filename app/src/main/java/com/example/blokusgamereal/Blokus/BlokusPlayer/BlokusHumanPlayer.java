@@ -1,9 +1,9 @@
-package com.example.blokusgamereal;
+package com.example.blokusgamereal.Blokus.BlokusPlayer;
 
 import android.view.MotionEvent;
 import android.view.View;
 
-import java.util.logging.Logger;
+import com.example.blokusgamereal.Blokus.BlokusViews.DrawBoard;
 
 public class BlokusHumanPlayer implements View.OnTouchListener, View.OnClickListener {
 

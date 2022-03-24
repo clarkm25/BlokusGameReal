@@ -11,7 +11,7 @@
         android:baselineAligned="false"
         android:orientation="horizontal"/>
 
-        <com.example.blokusgamereal.DrawBoard
+        <com.example.blokusgamereal.Blokus.BlokusViews.DrawBoard
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"/>

@@ -1,6 +1,4 @@
-package com.example.blokusgamereal;
-
-import static android.content.ContentValues.TAG;
+package com.example.blokusgamereal.Blokus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.blokusgamereal.Blokus.BlokusInfo.BlokusGameState;
+import com.example.blokusgamereal.R;
 
 public class MainActivity extends AppCompatActivity {
     private BlokusGameState myState = new BlokusGameState();

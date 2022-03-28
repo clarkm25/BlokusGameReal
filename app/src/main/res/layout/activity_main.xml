@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/top_gui_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,6 +13,7 @@
         android:orientation="horizontal"/>
 
         <com.example.blokusgamereal.Blokus.BlokusViews.DrawBoard
+            android:id="@+id/drawBoard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
@@ -64,4 +66,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

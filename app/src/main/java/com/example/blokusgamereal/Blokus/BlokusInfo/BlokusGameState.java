@@ -3,6 +3,8 @@ package com.example.blokusgamereal.Blokus.BlokusInfo;
 import android.graphics.Matrix;
 import android.graphics.Path;
 
+import com.example.blokusgamereal.Blokus.GameFramework.infoMessage.GameState;
+
 /**
  * Game State for the Blokus game. Provides information about the game as well as a constructor
  * and deep copy constructor for all of the information being supplied and initialized.
@@ -10,7 +12,7 @@ import android.graphics.Path;
  * @author Max Clark, Skyelar Cann, Gavin Raguindin
  * @version March 15th 2022
  */
-public class BlokusGameState {
+public class BlokusGameState extends GameState {
 
     /** Declaration of an enum type representing the states a certain tile can have*/
     public enum tileState{

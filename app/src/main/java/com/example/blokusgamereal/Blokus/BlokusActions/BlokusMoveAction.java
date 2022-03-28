@@ -1,20 +1,20 @@
 package com.example.blokusgamereal.Blokus.BlokusActions;
 
 import com.example.blokusgamereal.Blokus.BlokusInfo.BlokusBlock;
+import com.example.blokusgamereal.Blokus.GameFramework.actionMessage.GameAction;
+import com.example.blokusgamereal.Blokus.GameFramework.players.GamePlayer;
 
-public class BlokusMoveAction {
+public class BlokusMoveAction extends GameAction {
     private BlokusBlock[][] piece;
     private int row;
     private int col;
 
     /**
-    public BlokusMoveAction(GamePlayer player, BlokusBlock[][] initpiece, int initRow,
-                            int initCol) {
-        super(player);
-        piece = initPiece;
-        row = initRow;
-        col = initCol;
-
-    }
+     * constructor for GameAction
+     *
+     * @param player the player who created the action
      */
+    public BlokusMoveAction(GamePlayer player) {
+        super(player);
+    }
 }
